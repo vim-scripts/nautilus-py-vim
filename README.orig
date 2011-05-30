@@ -1,0 +1,29 @@
+nautilus-py-vim version 0.1
+
+nautilus-py-vim is a nautilus python extension which adds several menu items
+in the nautilus context menu for gvim, which would popup when right clicking
+on the file in nautilus file manager, just like gVim on Windows.
+
+To install this plugin, first make sure that you have installed the
+nautilus python extension(http://projects.gnome.org/nautilus-python):
+On Fedora:          # yum install nautilus-python
+On Debian/Ubuntu:   # apt-get install python-nautilus
+
+Then make the directory "~/.nautilus/python-extensions" if it doesn't exist:
+$ mkdir -p ~/.nautilus/python-extensions
+
+After that, extract the source tarball and copy the nautilusvim.py to
+~/.nautilus/python-extensions:
+$ cp nautilusvim.py ~/.nautilus/python-extensions/
+
+Restart nautilus(execute "nautilus -q") and try to right click on the file(s)
+you want to edit, you will see the changes in the context menu("Edit with
+gVim" when only one file is selected, and "Diff with gVim", "Edit with Multi
+gVim", "Edit with a Single gVim" are present when several files are selected),
+just like what it is like on Windows.
+
+
+Hong Xu
+May 30 2011
+
+vim: et sw=4 tw=78
