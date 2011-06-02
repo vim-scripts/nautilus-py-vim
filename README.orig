@@ -1,4 +1,4 @@
-nautilus-py-vim version 0.2
+nautilus-py-vim version 0.2.1
 
 nautilus-py-vim is a nautilus extension written in python, which adds several
 menu items in the nautilus context menu for gvim, which would popup when right
@@ -19,6 +19,9 @@ install.sh with root privilege:
 
 # ./install.sh
 
+If you encounter any problem when executing the command above, try to execute
+"bash install.sh" or "ksh install.sh".
+
 Then restart nautilus(execute "nautilus -q") and try to right click on the
 file(s) you want to edit, you will see the changes in the context menu("Edit
 with gVim" when only one file is selected, and "Diff with gVim", "Edit with
@@ -27,6 +30,6 @@ selected), just like what it is like on Windows.
 
 
 Hong Xu
-June 1 2011
+June 2 2011
 
 vim: et sw=4 tw=78
