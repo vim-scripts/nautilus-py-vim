@@ -2,19 +2,30 @@
 
 # File: install.sh
 #
-# version 0.2.1
+# version 0.3
 # by H Xu
 #
 # This is the install script for nautilus-py-vim.
 
 
 for ONE_INSTALL_DIR in\
+  '/usr/local/lib64/nautilus/extensions-3.0/python' \
+  '/usr/local/lib64/nautilus/extensions-2.0/python' \
+  '/usr/local/lib/nautilus/extensions-3.0/python' \
+  '/usr/local/lib/nautilus/extensions-2.0/python' \
   '/usr/lib64/nautilus/extensions-3.0/python' \
   '/usr/lib64/nautilus/extensions-2.0/python' \
   '/usr/lib/nautilus/extensions-3.0/python' \
   '/usr/lib/nautilus/extensions-2.0/python' \
   "$HOME/.nautilus/python-extensions"
 do
+
+  # make the "$HOME/.nautilus/python-extensions" before we check it
+  if [ $ONE_INSTALL_DIR = "$HOME/.nautilus/python-extensions" ]
+  then
+    mkdir -p "$ONE_INSTALL_DIR" >/dev/null 2>&1
+  fi
+
   # if we are able to write to the directory, try to copy nautilusvim.py to
   # it.
   if [ -d $ONE_INSTALL_DIR ] && [ -w $ONE_INSTALL_DIR ]

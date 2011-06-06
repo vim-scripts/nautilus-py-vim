@@ -3,14 +3,26 @@ This is a mirror of http://www.vim.org/scripts/script.php?script_id=3608
 Homepage and screenshot: http://xuhdev.github.com/nautilus-py-vim
 
 
-nautilus-py-vim is a nautilus extension written in python, which adds several
-menu items in the nautilus context menu for gvim, which would popup when right
-clicking on the file in nautilus file manager, just like gVim on Windows.
+1. Overview
+
+nautilus-py-vim is an extension for nautilus, the GNOME file manager, and is
+written in python. This extension adds several menu items in the nautilus
+right-click context menu for gvim, just like gVim on Windows.
+
+2. Install
 
 To install this extension, first make sure that you have installed the
 nautilus python extension(http://projects.gnome.org/nautilus-python):
 On Fedora:          # yum install nautilus-python
 On Debian/Ubuntu:   # apt-get install python-nautilus
+
+If you want to enable the "Edit with gVim as Root" menu item, you should
+install gksu(http://www.nongnu.org/gksu),
+beesu(http://honeybeenet.altervista.org/beesu) or
+kdesu(http://techbase.kde.org/Projects/kdesu):
+
+On Fedora:          # yum install beesu
+On Debian/Ubuntu:   # apt-get install gksu
 
 After that, just run "install.sh":
 
@@ -22,8 +34,8 @@ install.sh with root privilege:
 
 # ./install.sh
 
-If you encounter any problem when executing the command above, try to
-execute "bash install.sh" or "ksh install.sh".
+If you encounter any problem when executing the command above, try to execute
+"bash install.sh" or "ksh install.sh".
 
 Then restart nautilus(execute "nautilus -q") and try to right click on the
 file(s) you want to edit, you will see the changes in the context menu("Edit
@@ -31,9 +43,25 @@ with gVim" when only one file is selected, and "Diff with gVim", "Edit with
 Multi gVim", "Edit with a Single gVim" are present when several files are
 selected), just like what it is like on Windows.
 
+3. Configuration
+
+To configure the extension, you could write a config file. nautilus-py-vim
+will search the config file in the order of the following files:
+
+~/.nautilusvim.conf
+~/.nautilus/nautilusvim.conf
+/etc/nautilusvim.conf
+
+For the content of the config file, you could take a look at the
+"example.conf".
+
+If none of the configuration files are found, nautilus-py-vim will use default
+values.
+
+4. Uninstall
+
+Run the uninstall shell script.
+
 
 Repository: https://github.com/xuhdev/nautilus-py-vim
 
-If you find any bug, please send an email to xuhdev@gmail.com or submit the 
-bug on the issue tracker:
-https://github.com/xuhdev/nautilus-py-vim/issues
